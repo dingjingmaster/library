@@ -1,6 +1,27 @@
 cmake_minimum_required(VERSION 3.25)
 project(library C)
 
+set(PROJECT_VERSION_MAJOR 0)
+set(PROJECT_VERSION_MINOR 0)
+set(PROJECT_VERSION_PATCH 0)
+
 set(CMAKE_C_STANDARD 11)
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+add_compile_definitions(
+        -DAPP_NAME=\"${PROJECT_NAME}\"
+        -DAPP_VERSION_MAJOR=${PROJECT_VERSION_MAJOR}
+        -DAPP_VERSION_MINOR=${PROJECT_VERSION_MINOR}
+        -DAPP_VERSION_PATCH=${PROJECT_VERSION_PATCH}
+        -DAPP_VERSION=\"${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}\"
+)
+
+find_package(PkgConfig)
+
+pkg_check_modules(GIO   REQUIRED gio-2.0)
+pkg_check_modules(GLIB  REQUIRED glib-2.0)
+
 add_subdirectory(core)
+add_subdirectory(example)

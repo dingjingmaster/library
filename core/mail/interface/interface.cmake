@@ -1,0 +1,3 @@
+file(GLOB_RECURSE INTERFACE_SRC *.c *.h)
+
+file(GLOB_RECURSE INTERFACE_H *.h)
