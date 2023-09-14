@@ -236,15 +236,15 @@ void mail_session_login(MailSession *self, GError **error)
     gchar buf[1024] = {0};
     while (true) {
         rLen = g_socket_receive_with_blocking (priv->mSocket, buf, sizeof (buf) - 1, true, NULL, &errorT);
-        if (rLen <= 0) {
-            break;
+        if (rLen > 0) {
+            readBuf = g_byte_array_append (readBuf, buf, rLen);
         }
-        readBuf = g_byte_array_append (readBuf, buf, rLen);
-        if (rLen < sizeof (buf) - 1) {
+
+        if (rLen < sizeof (buf)) {
             break;
         }
     }
-    g_autofree gchar* readData = g_byte_array_free (readBuf, false);
+    g_autofree gchar* readData = (gchar*) g_byte_array_free (readBuf, false);
 
     LOG_DEBUG("%s", readData);
 }
