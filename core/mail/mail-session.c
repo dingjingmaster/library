@@ -8,10 +8,10 @@
 #include <gio/gio.h>
 
 #include "mail-error.h"
-#include "mail-message.h"
-
-#include "../../common/log.h"
+#include "../common/log.h"
 #include "mail-session-private.h"
+#include "interface/mail-message.h"
+#include "mail-message-parser-manager.h"
 
 
 typedef struct MailSessionPrivate  MailSessionPrivate;
@@ -27,7 +27,7 @@ struct MailSessionPrivate
     gchar*              mUserName;
     gchar*              mPassword;
 
-    guint8              mProtoType;
+    MailMessageParser   mProtoType;
 
     GBytes*             mReadBuffer;
 };
@@ -223,10 +223,10 @@ bool mail_session_private_before_login_parse_proto_type(MailSession* self)
     LOG_DEBUG("proto: %s", protoBuf);
 
     if (0 == g_ascii_strcasecmp (protoBuf, "IMAP4")) {
-        priv->mProtoType = MAIL_PROTO_IMAP_V4;
+        priv->mProtoType = MAIL_MESSAGE_PARSER_IMAP_V4;
     }
     else {
-        priv->mProtoType = MAIL_PROTO_UNKNOWN;
+        priv->mProtoType = MAIL_MESSAGE_PARSER_UNKNOWN;
     }
 
     return (ret >= 0);

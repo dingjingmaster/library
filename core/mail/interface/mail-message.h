@@ -8,9 +8,6 @@
 #include <stdbool.h>
 #include <glib-object.h>
 
-#define MAIL_PROTO_UNKNOWN              0x00
-#define MAIL_PROTO_IMAP_V4              0x01
-
 G_BEGIN_DECLS
 
 typedef enum MailProtoType          MailProtoType;
