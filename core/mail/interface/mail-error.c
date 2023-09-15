@@ -20,6 +20,8 @@ const MailError gMailError[] =
         {MAIL_ERROR_DOMAIN_FAIL,            N_("Domain name resolution failure!")},
         {MAIL_ERROR_OUT_OF_MEMORY,          N_("Out of memory!")},
         {MAIL_ERROR_CONNECT_FAIL,           N_("Failed to connect to the server!")},
+        {MAIL_ERROR_RECEIVE_DATA,           N_("Failed to read data from the server!")},
+        {MAIL_ERROR_PARSE_DATA,             N_("Parsing server data failed!")},
     };
 
 void mail_error_get_error_info(gint32 errorCode, GError **error)

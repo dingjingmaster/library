@@ -7,6 +7,7 @@ target_link_libraries(imap-example.run
 )
 target_include_directories(imap-example.run PUBLIC
         ${CMAKE_BINARY_DIR}/include
+        ${CMAKE_BINARY_DIR}/include/general-library
         ${GIO_INCLUDE_DIRS}
 )
 add_dependencies(imap-example.run general-library)

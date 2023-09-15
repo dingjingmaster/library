@@ -30,14 +30,14 @@ struct MailSessionClass
     bool (*connectServer)       (MailSession* self, GError** error);
 };
 
-MailSession*    mail_session_new    (void);
-void    mail_session_set_port       (MailSession* self, guint16 port);
-void    mail_session_set_use_SSL    (MailSession* self, bool isUseSSL);
-void    mail_session_set_hostname   (MailSession* self, const char* hostname, GError** error);
-void    mail_session_set_username   (MailSession* self, const char* username, GError** error);
-void    mail_session_set_password   (MailSession* self, const char* password, GError** error);
-void    mail_session_connect        (MailSession* self, GError** error);
-void    mail_session_login          (MailSession* self, GError** error);
+MailSession*    mail_session_new                (void);
+void            mail_session_set_port           (MailSession* self, guint16 port);
+void            mail_session_set_use_SSL        (MailSession* self, bool isUseSSL);
+void            mail_session_set_hostname       (MailSession* self, const char* hostname, GError** error);
+void            mail_session_set_username       (MailSession* self, const char* username, GError** error);
+void            mail_session_set_password       (MailSession* self, const char* password, GError** error);
+void            mail_session_connect            (MailSession* self, GError** error);
+void            mail_session_login              (MailSession* self, GError** error);
 
 G_END_DECLS
 

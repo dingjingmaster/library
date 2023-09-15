@@ -2,7 +2,7 @@
 // Created by dingjing on 23-9-14.
 //
 #include <stdio.h>
-#include <mail/log.h>
+#include <log.h>
 #include <mail/mail-session.h>
 
 int main (int argc, char* argv[])

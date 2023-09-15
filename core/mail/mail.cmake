@@ -7,5 +7,6 @@ file(GLOB MAIL_SRC
         ${CMAKE_SOURCE_DIR}/core/mail/mail-session.c
 )
 
-file(COPY ${INTERFACE_H}    DESTINATION ${CMAKE_BINARY_DIR}/include/mail/)
-file(COPY ${IMAP_H}         DESTINATION ${CMAKE_BINARY_DIR}/include/mail/imap/)
+file(COPY ${INTERFACE_H}            DESTINATION ${CMAKE_BINARY_DIR}/include/general-library/mail/)
+file(COPY ${IMAP_H}                 DESTINATION ${CMAKE_BINARY_DIR}/include/general-library/mail/imap/)
+file(COPY ${INTERFACE_PRIVATE_H}    DESTINATION ${CMAKE_BINARY_DIR}/include/general-library/mail/private/)
