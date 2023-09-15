@@ -4,7 +4,7 @@
 
 #ifndef LIBRARY_MAIL_SESSION_PRIVATE_H
 #define LIBRARY_MAIL_SESSION_PRIVATE_H
-#include "mail-session.h"
+#include <mail/mail-session.h>
 
 
 /**

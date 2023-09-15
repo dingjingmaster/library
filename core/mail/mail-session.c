@@ -10,26 +10,27 @@
 #include "mail-error.h"
 #include "../common/log.h"
 #include "mail-session-private.h"
+#include "mail-message-manager.h"
 #include "interface/mail-message.h"
-#include "mail-message-parser-manager.h"
+#include "interface/mail-message-type.h"
 
 
 typedef struct MailSessionPrivate  MailSessionPrivate;
 
 struct MailSessionPrivate
 {
-    bool                mIsUseSSL;
-    guint16             mPort;
-    GResolver*          mResolver;
-    GSocket*            mReceiveSocket;
+    bool                        mIsUseSSL;
+    guint16                     mPort;
+    GResolver*                  mResolver;
+    GSocket*                    mReceiveSocket;
 
-    gchar*              mHostName;
-    gchar*              mUserName;
-    gchar*              mPassword;
+    gchar*                      mHostName;
+    gchar*                      mUserName;
+    gchar*                      mPassword;
 
-    MailMessageParser   mProtoType;
+    MailMessageParserType       mProtoType;
 
-    GBytes*             mReadBuffer;
+    GBytes*                     mReadBuffer;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE(MailSession, mail_session, G_TYPE_OBJECT)

@@ -10,10 +10,8 @@
 
 G_BEGIN_DECLS
 
-typedef enum MailProtoType          MailProtoType;
-
-typedef struct MailMessage          MailMessage;
-typedef struct MailMessageClass     MailMessageClass;
+typedef struct MailMessage              MailMessage;
+typedef struct MailMessageClass         MailMessageClass;
 
 
 struct MailMessage

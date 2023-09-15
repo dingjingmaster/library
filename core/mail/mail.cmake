@@ -3,12 +3,12 @@ include(mail/interface/interface.cmake)
 
 file(GLOB MAIL_SRC
         ${INTERFACE_SRC} ${IMAP_SRC}
-        ${CMAKE_SOURCE_DIR}/core/mail/mail-message-parser-manager.c
+        ${CMAKE_SOURCE_DIR}/core/mail/mail-message-manager.c
 )
 file(GLOB MAIL_H
         ${CMAKE_SOURCE_DIR}/core/mail/mail-error.h
         ${CMAKE_SOURCE_DIR}/core/mail/mail-session.h
-        ${CMAKE_SOURCE_DIR}/core/mail/mail-message-parser-manager.h
+        ${CMAKE_SOURCE_DIR}/core/mail/mail-message-manager.h
 )
 file(GLOB_RECURSE PRIVATE_H *-private.h)
 
